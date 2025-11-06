@@ -6,8 +6,6 @@ public class interactBoxController : MonoBehaviour
     {
         if (other.CompareTag("interactObject"))
         {
-            //TODO
-            //other.GetComponent<interactObjectController>().
             Debug.Log("I´m interacting.");
         }
     }

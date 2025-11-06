@@ -31,10 +31,11 @@ public class playerController : MonoBehaviour
     private bool startInteracting;
     private float timeSinceInteracting;
 
-    [Header("Attack")]
+    [Header("Melee Attack")]
     public int playerDamage;
     public GameObject meleeAttack;
     private bool startMeleeAttack;
+    public float timeSinceMeleeAttack;
 
     private Rigidbody rb;
 
@@ -104,6 +105,16 @@ public class playerController : MonoBehaviour
         //Attack Input
         if(Input.GetKeyDown(KeyCode.Mouse0))
             startMeleeAttack = true;
+        //Todo este apartado se lo puede manejar con animaciones
+        //#################################################
+        if (startMeleeAttack)
+            timeSinceMeleeAttack += Time.deltaTime;
+        if (timeSinceMeleeAttack >= 0.5f)
+        {
+            timeSinceMeleeAttack = 0;
+            StopMeleeAttack();
+        }
+        //#################################################
     }
     //Movement Functions
     private void PlayerMovement()
@@ -193,7 +204,7 @@ public class playerController : MonoBehaviour
         }
     }
     //Attack Functions
-    /*private void StartMeleeAttack()
+    private void StartMeleeAttack()
     {
         if (startMeleeAttack && onGround)
         {
@@ -203,7 +214,8 @@ public class playerController : MonoBehaviour
     private void StopMeleeAttack()
     {
         meleeAttack.SetActive(false);
-    }*/
+        startMeleeAttack = false;
+    }
     public void BeingAttacked(int damage)
     {
         if (!isBeingAttacked)
@@ -218,7 +230,7 @@ public class playerController : MonoBehaviour
             {
                 playerHealtPoints = 0;
                 isPlayerAlive = false;
-                isBeingAttacked = true;
+                isBeingAttacked = false;
             }
         }
     }

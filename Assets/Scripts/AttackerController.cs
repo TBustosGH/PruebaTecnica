@@ -38,11 +38,12 @@ public class AttackerController : MonoBehaviour
             collision.gameObject.GetComponent<playerController>().BeingAttacked(enemyDamage);
         }
     }
-    /*private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player Attack"))
         {
-            BeingAttacked(other.GetComponent<playerController>().playerDamage);
+
+            BeingAttacked(other.GetComponentInParent<playerController>().playerDamage);
         }
-    }*/
+    }
 }
