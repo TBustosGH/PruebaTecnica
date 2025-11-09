@@ -48,10 +48,15 @@ public class playerController : MonoBehaviour
     {
         if (isPlayerAlive)
         {
+            Cursor.lockState = CursorLockMode.Locked;
             InputFunction();
             StaminUp();
             StopBeingAttacked();
             LifeRegenerate();
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.None;
         }
     }
     private void FixedUpdate()
