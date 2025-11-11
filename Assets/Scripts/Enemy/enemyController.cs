@@ -44,6 +44,7 @@ public class enemyController : MonoBehaviour
             }
             else
             {
+                Debug.Log("Jugador avistado.");
                 FollowPlayer();
             }
         }
