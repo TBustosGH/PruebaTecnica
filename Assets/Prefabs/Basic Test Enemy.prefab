@@ -130,7 +130,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::enemyController
   enemyDamage: 15
   enemyHealtPoints: 75
-  enemySpeed: 2
+  enemySpeed: 1
   enemyDetectionArea: 15
   hitForce: 15
   player: {fileID: 0}

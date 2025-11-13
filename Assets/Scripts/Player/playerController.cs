@@ -149,7 +149,7 @@ public class playerController : MonoBehaviour
     }
     private void StaminUp()
     {
-        stamina = Mathf.Clamp(stamina, 0f, 100f);
+        stamina = Mathf.Clamp(stamina, 0f, 250);
         staminaDelay = Mathf.Clamp(staminaDelay, 0f, 0.750f);
         if (movement == Vector3.zero && onGround)
             staminaDelay += Time.deltaTime;
@@ -162,7 +162,7 @@ public class playerController : MonoBehaviour
     //Jump Functions
     private void PlayerJump()
     {
-        if (startJump && onGround)
+        if (startJump && onGround && stamina >= 15)
         {
             staminaDelay = 0;
             stamina -= 15;

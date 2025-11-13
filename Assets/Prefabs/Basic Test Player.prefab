@@ -270,7 +270,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::playerController
   playerSpeed: 3.5
-  stamina: 100
+  stamina: 250
   playerJumpForce: 450
   sensivilityX: 5
   sensivilityY: 5
